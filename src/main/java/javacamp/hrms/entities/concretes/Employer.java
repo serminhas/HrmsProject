@@ -1,7 +1,13 @@
 package javacamp.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,6 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Employer extends User {
 	
+	@Id
 	@NotNull
 	@Column(name="Id")
 	private int id;
@@ -23,6 +30,9 @@ public class Employer extends User {
 	@NotNull
 	@Column(name="EmployerId") 
 	private int employerId;
+	
+	@OneToMany(mappedBy="employer")
+	private List<JobAdvert> JobAdverts;
 	
 	@NotNull
 	@Column(name="CompanyName")
@@ -36,9 +46,13 @@ public class Employer extends User {
 	@Column(name="Phone")
 	private String phone;
 	
-	@NotNull
-	@Column(name="PositionId")
-	private int positionId;
+	//@NotNull
+	//@Column(name="PositionId")
+	//private int positionId;
 
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name="PositionId")
+	private JobPosition jobPosition;
 	
 }

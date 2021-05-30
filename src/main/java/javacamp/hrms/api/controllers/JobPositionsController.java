@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javacamp.hrms.business.abstracts.JobPositionService;
 import javacamp.hrms.core.utilities.results.DataResult;
@@ -36,4 +37,8 @@ public class JobPositionsController {
 		return this.jobPositionService.add(jobPosition);
 	}
 	
+	@GetMapping("/getByPositionName")
+	public DataResult<List<JobPosition>> getByPositionName(@RequestParam String positionName){
+		return this.jobPositionService.getByPositionName(positionName);
+	}
 }

@@ -39,8 +39,11 @@ public class JobPositionManager implements JobPositionService{
             return new ErrorResult(Messages.AlreadyExistedJobPosition);
         }
 		
-		
-		
+	}
+
+	@Override
+	public DataResult<List<JobPosition>> getByPositionName(String positionName) {
+		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.getByPositionName(positionName), Messages.JobPositionSelected);
 	}
 
 }

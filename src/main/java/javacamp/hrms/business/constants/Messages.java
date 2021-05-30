@@ -1,6 +1,13 @@
 package javacamp.hrms.business.constants;
 
 public class Messages {
+
+	public static String NoJobAdvertAdded = "Gereken tüm alanlar doldurulmadığı için iş ilanı eklenemedi";
+
+	public static String JobAdvertClosed = "İş ilanı kapatıldı";
+
+	public static String JobAdvertAdded = "İş ilanı eklendi";
+
 	public static String EmployerListed= "İşverenler listelendi";
 	
 	public static String WrongEmailFormat= "Email formatına uygun giriş yapınız!";
@@ -16,6 +23,8 @@ public class Messages {
 	public static String JobPositionListed= "Pozisyonlar listelendi";
 	
 	public static String JobPositionAdded="İş pozisyonu eklendi";
+	
+	public static String JobPositionSelected="İş pozisyonu seçildi";
 	
 	public static String AlreadyExistedJobPosition="İş pozisyonu sistemde kayıtlıdır";
 	

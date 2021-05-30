@@ -9,4 +9,5 @@ import javacamp.hrms.entities.concretes.JobPosition;
 public interface JobPositionService {
 	DataResult<List<JobPosition>> getAll();
 	Result add(JobPosition jobPosition);
+	DataResult<List<JobPosition>> getByPositionName(String positionName);
 }
